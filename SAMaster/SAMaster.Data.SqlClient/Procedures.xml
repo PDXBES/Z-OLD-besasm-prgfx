@@ -1,0 +1,1270 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type='text/xsl' href="scriptsql.xsl"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database includeDrop="true">SAMaster</database>
+<procedures>
+		
+		<procedure owner="dbo" name="mst_nodes_ac_Get_List" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Gets all records from the mst_nodes_ac table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters/>
+			<body><![CDATA[
+				
+				SELECT
+					[MAPINFO_ID],
+					[Node],
+					[XCoord],
+					[YCoord],
+					[NodeType],
+					[GrndElev],
+					[HasSpecNode],
+					[HasSpecLink],
+					[GageID],
+					[DME_GlobalID]
+				FROM
+					[dbo].[mst_nodes_ac]
+					
+				SELECT @@ROWCOUNT
+			]]></body>
+		</procedure>
+		
+		
+		<procedure owner="dbo" name="mst_nodes_ac_GetPaged" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Gets records from the mst_nodes_ac table passing page index and page count parameters
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@WhereClause" type="varchar" direction="Input" size="2000" precision="0" scale="0" param="(2000)" />
+				<parameter name="@OrderBy" type="varchar" direction="Input" size="2000" precision="0" scale="0" param="(2000)"/>
+				<parameter name="@PageIndex" type="int" direction="Input" size="0" precision="10" scale="0" />
+				<parameter name="@PageSize" type="int" direction="Input" size="0" precision="10" scale="0" /> 
+			</parameters>
+			<body><![CDATA[
+				
+				BEGIN
+				DECLARE @PageLowerBound int
+				DECLARE @PageUpperBound int
+				
+				-- Set the page bounds
+				SET @PageLowerBound = @PageSize * @PageIndex
+				SET @PageUpperBound = @PageLowerBound + @PageSize
+
+				-- Create a temp table to store the select results
+				CREATE TABLE #PageIndex
+				(
+				    [IndexId] int IDENTITY (1, 1) NOT NULL,
+				    [MAPINFO_ID] int 
+				)
+				
+				-- Insert into the temp table
+				DECLARE @SQL AS nvarchar(4000)
+				SET @SQL = 'INSERT INTO #PageIndex ([MAPINFO_ID])'
+				SET @SQL = @SQL + ' SELECT'
+				IF @PageSize > 0
+				BEGIN
+					SET @SQL = @SQL + ' TOP ' + CONVERT(nvarchar, @PageUpperBound)
+				END
+				SET @SQL = @SQL + ' [MAPINFO_ID]'
+				SET @SQL = @SQL + ' FROM [dbo].[mst_nodes_ac]'
+				IF LEN(@WhereClause) > 0
+				BEGIN
+					SET @SQL = @SQL + ' WHERE ' + @WhereClause
+				END
+				IF LEN(@OrderBy) > 0
+				BEGIN
+					SET @SQL = @SQL + ' ORDER BY ' + @OrderBy
+				END
+				
+				-- Populate the temp table
+				EXEC sp_executesql @SQL
+
+				-- Return paged results
+				SELECT O.[MAPINFO_ID], O.[Node], O.[XCoord], O.[YCoord], O.[NodeType], O.[GrndElev], O.[HasSpecNode], O.[HasSpecLink], O.[GageID], O.[DME_GlobalID]
+				FROM
+				    [dbo].[mst_nodes_ac] O,
+				    #PageIndex PageIndex
+				WHERE
+				    PageIndex.IndexId > @PageLowerBound
+					AND O.[MAPINFO_ID] = PageIndex.[MAPINFO_ID]
+				ORDER BY
+				    PageIndex.IndexId
+				
+				-- get row count
+				SET @SQL = 'SELECT COUNT(*) AS TotalRowCount'
+				SET @SQL = @SQL + ' FROM [dbo].[mst_nodes_ac]'
+				IF LEN(@WhereClause) > 0
+				BEGIN
+					SET @SQL = @SQL + ' WHERE ' + @WhereClause
+				END
+				EXEC sp_executesql @SQL
+			
+				END
+			]]></body>
+		</procedure>
+		
+		<procedure owner="dbo" name="mst_nodes_ac_Insert" grant="">
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Inserts a record into the mst_nodes_ac table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@MapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@Node" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@Xcoord" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Ycoord" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@NodeType" type="nvarchar" direction="Input" size="4" precision="0" scale="0" param="(4)" nulldefault=""/>
+				<parameter name="@GrndElev" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@HasSpecNode" type="nvarchar" direction="Input" size="1" precision="0" scale="0" param="(1)" nulldefault=""/>
+				<parameter name="@HasSpecLink" type="nvarchar" direction="Input" size="1" precision="0" scale="0" param="(1)" nulldefault=""/>
+				<parameter name="@GageId" type="nvarchar" direction="Input" size="8" precision="0" scale="0" param="(8)" nulldefault=""/>
+				<parameter name="@DmeGlobalId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				
+				INSERT INTO [dbo].[mst_nodes_ac]
+					(
+					[MAPINFO_ID]
+					,[Node]
+					,[XCoord]
+					,[YCoord]
+					,[NodeType]
+					,[GrndElev]
+					,[HasSpecNode]
+					,[HasSpecLink]
+					,[GageID]
+					,[DME_GlobalID]
+					)
+				VALUES
+					(
+					@MapinfoId
+					,@Node
+					,@Xcoord
+					,@Ycoord
+					,@NodeType
+					,@GrndElev
+					,@HasSpecNode
+					,@HasSpecLink
+					,@GageId
+					,@DmeGlobalId
+					)
+				
+									
+							
+			]]></body>
+		</procedure>
+		<procedure owner="dbo" name="mst_nodes_ac_Update" grant="">
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Updates a record in the mst_nodes_ac table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@MapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@OriginalMapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@Node" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@Xcoord" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Ycoord" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@NodeType" type="nvarchar" direction="Input" size="4" precision="0" scale="0" param="(4)" nulldefault=""/>
+				<parameter name="@GrndElev" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@HasSpecNode" type="nvarchar" direction="Input" size="1" precision="0" scale="0" param="(1)" nulldefault=""/>
+				<parameter name="@HasSpecLink" type="nvarchar" direction="Input" size="1" precision="0" scale="0" param="(1)" nulldefault=""/>
+				<parameter name="@GageId" type="nvarchar" direction="Input" size="8" precision="0" scale="0" param="(8)" nulldefault=""/>
+				<parameter name="@DmeGlobalId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				
+				
+				-- Modify the updatable columns
+				UPDATE
+					[dbo].[mst_nodes_ac]
+				SET
+					[MAPINFO_ID] = @MapinfoId
+					,[Node] = @Node
+					,[XCoord] = @Xcoord
+					,[YCoord] = @Ycoord
+					,[NodeType] = @NodeType
+					,[GrndElev] = @GrndElev
+					,[HasSpecNode] = @HasSpecNode
+					,[HasSpecLink] = @HasSpecLink
+					,[GageID] = @GageId
+					,[DME_GlobalID] = @DmeGlobalId
+				WHERE
+[MAPINFO_ID] = @OriginalMapinfoId 
+				
+			]]></body>
+		</procedure>
+		<procedure owner="dbo" name="mst_nodes_ac_Delete" grant="">
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Deletes a record in the mst_nodes_ac table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@MapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				DELETE FROM [dbo].[mst_nodes_ac] WITH (ROWLOCK) 
+				WHERE
+					[MAPINFO_ID] = @MapinfoId
+					
+			]]></body>
+		</procedure>
+		<procedure owner="dbo" name="mst_nodes_ac_GetByNode" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Select records from the mst_nodes_ac table through an index
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@Node" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				SELECT
+					[MAPINFO_ID],
+					[Node],
+					[XCoord],
+					[YCoord],
+					[NodeType],
+					[GrndElev],
+					[HasSpecNode],
+					[HasSpecLink],
+					[GageID],
+					[DME_GlobalID]
+				FROM
+					[dbo].[mst_nodes_ac]
+				WHERE
+					[Node] = @Node
+				SELECT @@ROWCOUNT
+					
+			]]></body>
+			
+		</procedure>
+		<procedure owner="dbo" name="mst_nodes_ac_GetByMapinfoId" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Select records from the mst_nodes_ac table through an index
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@MapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				SELECT
+					[MAPINFO_ID],
+					[Node],
+					[XCoord],
+					[YCoord],
+					[NodeType],
+					[GrndElev],
+					[HasSpecNode],
+					[HasSpecLink],
+					[GageID],
+					[DME_GlobalID]
+				FROM
+					[dbo].[mst_nodes_ac]
+				WHERE
+					[MAPINFO_ID] = @MapinfoId
+				SELECT @@ROWCOUNT
+					
+			]]></body>
+			
+		</procedure>
+		<procedure owner="dbo" name="mst_nodes_ac_Find" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Finds records in the mst_nodes_ac table passing nullable parameters
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@SearchUsingOR" type="bit" direction="Input" size="0" precision="1" scale="0" param="" nulldefault="null"/>
+				<parameter name="@MapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Node" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault="null"/>
+				<parameter name="@Xcoord" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Ycoord" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@NodeType" type="nvarchar" direction="Input" size="4" precision="0" scale="0" param="(4)" nulldefault="null"/>
+				<parameter name="@GrndElev" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@HasSpecNode" type="nvarchar" direction="Input" size="1" precision="0" scale="0" param="(1)" nulldefault="null"/>
+				<parameter name="@HasSpecLink" type="nvarchar" direction="Input" size="1" precision="0" scale="0" param="(1)" nulldefault="null"/>
+				<parameter name="@GageId" type="nvarchar" direction="Input" size="8" precision="0" scale="0" param="(8)" nulldefault="null"/>
+				<parameter name="@DmeGlobalId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault="null"/>
+			</parameters>
+			<body><![CDATA[
+				
+  IF ISNULL(@SearchUsingOR, 0) <> 1
+  BEGIN
+    SELECT
+	  [MAPINFO_ID]
+	, [Node]
+	, [XCoord]
+	, [YCoord]
+	, [NodeType]
+	, [GrndElev]
+	, [HasSpecNode]
+	, [HasSpecLink]
+	, [GageID]
+	, [DME_GlobalID]
+    FROM
+	[dbo].[mst_nodes_ac]
+    WHERE 
+	 ([MAPINFO_ID] = @MapinfoId OR @MapinfoId IS NULL)
+	AND ([Node] = @Node OR @Node IS NULL)
+	AND ([XCoord] = @Xcoord OR @Xcoord IS NULL)
+	AND ([YCoord] = @Ycoord OR @Ycoord IS NULL)
+	AND ([NodeType] = @NodeType OR @NodeType IS NULL)
+	AND ([GrndElev] = @GrndElev OR @GrndElev IS NULL)
+	AND ([HasSpecNode] = @HasSpecNode OR @HasSpecNode IS NULL)
+	AND ([HasSpecLink] = @HasSpecLink OR @HasSpecLink IS NULL)
+	AND ([GageID] = @GageId OR @GageId IS NULL)
+	AND ([DME_GlobalID] = @DmeGlobalId OR @DmeGlobalId IS NULL)
+						
+  END
+  ELSE
+  BEGIN
+    SELECT
+	  [MAPINFO_ID]
+	, [Node]
+	, [XCoord]
+	, [YCoord]
+	, [NodeType]
+	, [GrndElev]
+	, [HasSpecNode]
+	, [HasSpecLink]
+	, [GageID]
+	, [DME_GlobalID]
+    FROM
+	[dbo].[mst_nodes_ac]
+    WHERE 
+	 ([MAPINFO_ID] = @MapinfoId AND @MapinfoId is not null)
+	OR ([Node] = @Node AND @Node is not null)
+	OR ([XCoord] = @Xcoord AND @Xcoord is not null)
+	OR ([YCoord] = @Ycoord AND @Ycoord is not null)
+	OR ([NodeType] = @NodeType AND @NodeType is not null)
+	OR ([GrndElev] = @GrndElev AND @GrndElev is not null)
+	OR ([HasSpecNode] = @HasSpecNode AND @HasSpecNode is not null)
+	OR ([HasSpecLink] = @HasSpecLink AND @HasSpecLink is not null)
+	OR ([GageID] = @GageId AND @GageId is not null)
+	OR ([DME_GlobalID] = @DmeGlobalId AND @DmeGlobalId is not null)
+	SELECT @@ROWCOUNT			
+  END
+				]]></body>
+		</procedure>
+
+		
+		<procedure owner="dbo" name="mst_nodes_ac_Find_Dynamic"  skip="true">
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Gets records from the mst_nodes_ac table using a dynamically generated query.
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters/>
+			<body><![CDATA[
+				
+				BEGIN
+				
+				-- Create a temp table to store the select results
+				CREATE TABLE #PageIndex
+				(
+				    [IndexId] int IDENTITY (1, 1) NOT NULL,
+				    [MAPINFO_ID] int 
+				)
+				
+				-- Insert into the temp table
+				INSERT INTO #PageIndex ( [MAPINFO_ID] )
+				SELECT TOP {3} [MAPINFO_ID]
+				FROM [dbo].[mst_nodes_ac] {0}
+				ORDER BY {1}
+				
+				-- Return paged results
+				SELECT O.[MAPINFO_ID], O.[Node], O.[XCoord], O.[YCoord], O.[NodeType], O.[GrndElev], O.[HasSpecNode], O.[HasSpecLink], O.[GageID], O.[DME_GlobalID]
+				FROM
+				    [dbo].[mst_nodes_ac] O,
+				    #PageIndex PageIndex
+				WHERE
+				    PageIndex.IndexId > {2}
+				    AND O.[MAPINFO_ID] = PageIndex.[MAPINFO_ID]
+				ORDER BY
+				    PageIndex.IndexId
+				
+
+				-- get total count
+				SELECT COUNT(*) AS TotalRowCount FROM [dbo].[mst_nodes_ac] {0};
+				
+				DROP TABLE #PageIndex
+				END
+			]]></body>
+		</procedure>
+		
+		
+		<procedure owner="dbo" name="mst_links_ac_Get_List" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Gets all records from the mst_links_ac table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters/>
+			<body><![CDATA[
+				
+				SELECT
+					[MAPINFO_ID],
+					[MLinkID],
+					[CompKey],
+					[USNode],
+					[DSNode],
+					[PipeShape],
+					[LinkType],
+					[PipeFlowType],
+					[Length],
+					[DiamWidth],
+					[Height],
+					[Material],
+					[upsdpth],
+					[dwndpth],
+					[USIE],
+					[DSIE],
+					[AsBuilt],
+					[Instdate],
+					[FromX],
+					[FromY],
+					[ToX],
+					[ToY],
+					[Roughness],
+					[TimeFrame],
+					[DataFlagSynth],
+					[DataQual],
+					[Hservstat],
+					[ValidFromDate],
+					[ValidToDate],
+					[CADKey],
+					[AuditNodeID],
+					[AuditDups],
+					[AuditSpatial],
+					[AuditOK2Go],
+					[AuditProcTimestamp],
+					[Qdes],
+					[DME_GlobalID]
+				FROM
+					[dbo].[mst_links_ac]
+					
+				SELECT @@ROWCOUNT
+			]]></body>
+		</procedure>
+		
+		
+		<procedure owner="dbo" name="mst_links_ac_GetPaged" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Gets records from the mst_links_ac table passing page index and page count parameters
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@WhereClause" type="varchar" direction="Input" size="2000" precision="0" scale="0" param="(2000)" />
+				<parameter name="@OrderBy" type="varchar" direction="Input" size="2000" precision="0" scale="0" param="(2000)"/>
+				<parameter name="@PageIndex" type="int" direction="Input" size="0" precision="10" scale="0" />
+				<parameter name="@PageSize" type="int" direction="Input" size="0" precision="10" scale="0" /> 
+			</parameters>
+			<body><![CDATA[
+				
+				BEGIN
+				DECLARE @PageLowerBound int
+				DECLARE @PageUpperBound int
+				
+				-- Set the page bounds
+				SET @PageLowerBound = @PageSize * @PageIndex
+				SET @PageUpperBound = @PageLowerBound + @PageSize
+
+				-- Create a temp table to store the select results
+				CREATE TABLE #PageIndex
+				(
+				    [IndexId] int IDENTITY (1, 1) NOT NULL,
+				    [MAPINFO_ID] int 
+				)
+				
+				-- Insert into the temp table
+				DECLARE @SQL AS nvarchar(4000)
+				SET @SQL = 'INSERT INTO #PageIndex ([MAPINFO_ID])'
+				SET @SQL = @SQL + ' SELECT'
+				IF @PageSize > 0
+				BEGIN
+					SET @SQL = @SQL + ' TOP ' + CONVERT(nvarchar, @PageUpperBound)
+				END
+				SET @SQL = @SQL + ' [MAPINFO_ID]'
+				SET @SQL = @SQL + ' FROM [dbo].[mst_links_ac]'
+				IF LEN(@WhereClause) > 0
+				BEGIN
+					SET @SQL = @SQL + ' WHERE ' + @WhereClause
+				END
+				IF LEN(@OrderBy) > 0
+				BEGIN
+					SET @SQL = @SQL + ' ORDER BY ' + @OrderBy
+				END
+				
+				-- Populate the temp table
+				EXEC sp_executesql @SQL
+
+				-- Return paged results
+				SELECT O.[MAPINFO_ID], O.[MLinkID], O.[CompKey], O.[USNode], O.[DSNode], O.[PipeShape], O.[LinkType], O.[PipeFlowType], O.[Length], O.[DiamWidth], O.[Height], O.[Material], O.[upsdpth], O.[dwndpth], O.[USIE], O.[DSIE], O.[AsBuilt], O.[Instdate], O.[FromX], O.[FromY], O.[ToX], O.[ToY], O.[Roughness], O.[TimeFrame], O.[DataFlagSynth], O.[DataQual], O.[Hservstat], O.[ValidFromDate], O.[ValidToDate], O.[CADKey], O.[AuditNodeID], O.[AuditDups], O.[AuditSpatial], O.[AuditOK2Go], O.[AuditProcTimestamp], O.[Qdes], O.[DME_GlobalID]
+				FROM
+				    [dbo].[mst_links_ac] O,
+				    #PageIndex PageIndex
+				WHERE
+				    PageIndex.IndexId > @PageLowerBound
+					AND O.[MAPINFO_ID] = PageIndex.[MAPINFO_ID]
+				ORDER BY
+				    PageIndex.IndexId
+				
+				-- get row count
+				SET @SQL = 'SELECT COUNT(*) AS TotalRowCount'
+				SET @SQL = @SQL + ' FROM [dbo].[mst_links_ac]'
+				IF LEN(@WhereClause) > 0
+				BEGIN
+					SET @SQL = @SQL + ' WHERE ' + @WhereClause
+				END
+				EXEC sp_executesql @SQL
+			
+				END
+			]]></body>
+		</procedure>
+		
+		<procedure owner="dbo" name="mst_links_ac_Insert" grant="">
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Inserts a record into the mst_links_ac table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@MapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@MlinkId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@CompKey" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@UsNode" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@DsNode" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@PipeShape" type="nvarchar" direction="Input" size="4" precision="0" scale="0" param="(4)" nulldefault=""/>
+				<parameter name="@LinkType" type="nvarchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault=""/>
+				<parameter name="@PipeFlowType" type="nvarchar" direction="Input" size="1" precision="0" scale="0" param="(1)" nulldefault=""/>
+				<parameter name="@Length" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@DiamWidth" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Height" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Material" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@Upsdpth" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Dwndpth" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Usie" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Dsie" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@AsBuilt" type="nvarchar" direction="Input" size="14" precision="0" scale="0" param="(14)" nulldefault=""/>
+				<parameter name="@Instdate" type="datetime" direction="Input" size="8" precision="23" scale="3" param="" nulldefault=""/>
+				<parameter name="@Fromx" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Fromy" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Tox" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Toy" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Roughness" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@TimeFrame" type="nvarchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault=""/>
+				<parameter name="@DataFlagSynth" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@DataQual" type="nvarchar" direction="Input" size="15" precision="0" scale="0" param="(15)" nulldefault=""/>
+				<parameter name="@Hservstat" type="nvarchar" direction="Input" size="4" precision="0" scale="0" param="(4)" nulldefault=""/>
+				<parameter name="@ValidFromDate" type="nvarchar" direction="Input" size="8" precision="0" scale="0" param="(8)" nulldefault=""/>
+				<parameter name="@ValidToDate" type="nvarchar" direction="Input" size="8" precision="0" scale="0" param="(8)" nulldefault=""/>
+				<parameter name="@CadKey" type="nvarchar" direction="Input" size="14" precision="0" scale="0" param="(14)" nulldefault=""/>
+				<parameter name="@AuditNodeId" type="nvarchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@AuditDups" type="nvarchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@AuditSpatial" type="nvarchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@AuditOk2Go" type="bit" direction="Input" size="1" precision="1" scale="0" param="" nulldefault=""/>
+				<parameter name="@AuditProcTimestamp" type="nvarchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@Qdes" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@DmeGlobalId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				
+				INSERT INTO [dbo].[mst_links_ac]
+					(
+					[MAPINFO_ID]
+					,[MLinkID]
+					,[CompKey]
+					,[USNode]
+					,[DSNode]
+					,[PipeShape]
+					,[LinkType]
+					,[PipeFlowType]
+					,[Length]
+					,[DiamWidth]
+					,[Height]
+					,[Material]
+					,[upsdpth]
+					,[dwndpth]
+					,[USIE]
+					,[DSIE]
+					,[AsBuilt]
+					,[Instdate]
+					,[FromX]
+					,[FromY]
+					,[ToX]
+					,[ToY]
+					,[Roughness]
+					,[TimeFrame]
+					,[DataFlagSynth]
+					,[DataQual]
+					,[Hservstat]
+					,[ValidFromDate]
+					,[ValidToDate]
+					,[CADKey]
+					,[AuditNodeID]
+					,[AuditDups]
+					,[AuditSpatial]
+					,[AuditOK2Go]
+					,[AuditProcTimestamp]
+					,[Qdes]
+					,[DME_GlobalID]
+					)
+				VALUES
+					(
+					@MapinfoId
+					,@MlinkId
+					,@CompKey
+					,@UsNode
+					,@DsNode
+					,@PipeShape
+					,@LinkType
+					,@PipeFlowType
+					,@Length
+					,@DiamWidth
+					,@Height
+					,@Material
+					,@Upsdpth
+					,@Dwndpth
+					,@Usie
+					,@Dsie
+					,@AsBuilt
+					,@Instdate
+					,@Fromx
+					,@Fromy
+					,@Tox
+					,@Toy
+					,@Roughness
+					,@TimeFrame
+					,@DataFlagSynth
+					,@DataQual
+					,@Hservstat
+					,@ValidFromDate
+					,@ValidToDate
+					,@CadKey
+					,@AuditNodeId
+					,@AuditDups
+					,@AuditSpatial
+					,@AuditOk2Go
+					,@AuditProcTimestamp
+					,@Qdes
+					,@DmeGlobalId
+					)
+				
+									
+							
+			]]></body>
+		</procedure>
+		<procedure owner="dbo" name="mst_links_ac_Update" grant="">
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Updates a record in the mst_links_ac table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@MapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@OriginalMapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@MlinkId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@CompKey" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@UsNode" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@DsNode" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@PipeShape" type="nvarchar" direction="Input" size="4" precision="0" scale="0" param="(4)" nulldefault=""/>
+				<parameter name="@LinkType" type="nvarchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault=""/>
+				<parameter name="@PipeFlowType" type="nvarchar" direction="Input" size="1" precision="0" scale="0" param="(1)" nulldefault=""/>
+				<parameter name="@Length" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@DiamWidth" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Height" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Material" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@Upsdpth" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Dwndpth" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Usie" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Dsie" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@AsBuilt" type="nvarchar" direction="Input" size="14" precision="0" scale="0" param="(14)" nulldefault=""/>
+				<parameter name="@Instdate" type="datetime" direction="Input" size="8" precision="23" scale="3" param="" nulldefault=""/>
+				<parameter name="@Fromx" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Fromy" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Tox" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Toy" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@Roughness" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@TimeFrame" type="nvarchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault=""/>
+				<parameter name="@DataFlagSynth" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@DataQual" type="nvarchar" direction="Input" size="15" precision="0" scale="0" param="(15)" nulldefault=""/>
+				<parameter name="@Hservstat" type="nvarchar" direction="Input" size="4" precision="0" scale="0" param="(4)" nulldefault=""/>
+				<parameter name="@ValidFromDate" type="nvarchar" direction="Input" size="8" precision="0" scale="0" param="(8)" nulldefault=""/>
+				<parameter name="@ValidToDate" type="nvarchar" direction="Input" size="8" precision="0" scale="0" param="(8)" nulldefault=""/>
+				<parameter name="@CadKey" type="nvarchar" direction="Input" size="14" precision="0" scale="0" param="(14)" nulldefault=""/>
+				<parameter name="@AuditNodeId" type="nvarchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@AuditDups" type="nvarchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@AuditSpatial" type="nvarchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@AuditOk2Go" type="bit" direction="Input" size="1" precision="1" scale="0" param="" nulldefault=""/>
+				<parameter name="@AuditProcTimestamp" type="nvarchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@Qdes" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault=""/>
+				<parameter name="@DmeGlobalId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				
+				
+				-- Modify the updatable columns
+				UPDATE
+					[dbo].[mst_links_ac]
+				SET
+					[MAPINFO_ID] = @MapinfoId
+					,[MLinkID] = @MlinkId
+					,[CompKey] = @CompKey
+					,[USNode] = @UsNode
+					,[DSNode] = @DsNode
+					,[PipeShape] = @PipeShape
+					,[LinkType] = @LinkType
+					,[PipeFlowType] = @PipeFlowType
+					,[Length] = @Length
+					,[DiamWidth] = @DiamWidth
+					,[Height] = @Height
+					,[Material] = @Material
+					,[upsdpth] = @Upsdpth
+					,[dwndpth] = @Dwndpth
+					,[USIE] = @Usie
+					,[DSIE] = @Dsie
+					,[AsBuilt] = @AsBuilt
+					,[Instdate] = @Instdate
+					,[FromX] = @Fromx
+					,[FromY] = @Fromy
+					,[ToX] = @Tox
+					,[ToY] = @Toy
+					,[Roughness] = @Roughness
+					,[TimeFrame] = @TimeFrame
+					,[DataFlagSynth] = @DataFlagSynth
+					,[DataQual] = @DataQual
+					,[Hservstat] = @Hservstat
+					,[ValidFromDate] = @ValidFromDate
+					,[ValidToDate] = @ValidToDate
+					,[CADKey] = @CadKey
+					,[AuditNodeID] = @AuditNodeId
+					,[AuditDups] = @AuditDups
+					,[AuditSpatial] = @AuditSpatial
+					,[AuditOK2Go] = @AuditOk2Go
+					,[AuditProcTimestamp] = @AuditProcTimestamp
+					,[Qdes] = @Qdes
+					,[DME_GlobalID] = @DmeGlobalId
+				WHERE
+[MAPINFO_ID] = @OriginalMapinfoId 
+				
+			]]></body>
+		</procedure>
+		<procedure owner="dbo" name="mst_links_ac_Delete" grant="">
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Deletes a record in the mst_links_ac table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@MapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				DELETE FROM [dbo].[mst_links_ac] WITH (ROWLOCK) 
+				WHERE
+					[MAPINFO_ID] = @MapinfoId
+					
+			]]></body>
+		</procedure>
+		<procedure owner="dbo" name="mst_links_ac_GetByDsNode" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Select records from the mst_links_ac table through a foreign key
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@DsNode" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				SET ANSI_NULLS OFF
+				
+				SELECT
+					[MAPINFO_ID],
+					[MLinkID],
+					[CompKey],
+					[USNode],
+					[DSNode],
+					[PipeShape],
+					[LinkType],
+					[PipeFlowType],
+					[Length],
+					[DiamWidth],
+					[Height],
+					[Material],
+					[upsdpth],
+					[dwndpth],
+					[USIE],
+					[DSIE],
+					[AsBuilt],
+					[Instdate],
+					[FromX],
+					[FromY],
+					[ToX],
+					[ToY],
+					[Roughness],
+					[TimeFrame],
+					[DataFlagSynth],
+					[DataQual],
+					[Hservstat],
+					[ValidFromDate],
+					[ValidToDate],
+					[CADKey],
+					[AuditNodeID],
+					[AuditDups],
+					[AuditSpatial],
+					[AuditOK2Go],
+					[AuditProcTimestamp],
+					[Qdes],
+					[DME_GlobalID]
+				FROM
+					[dbo].[mst_links_ac]
+				WHERE
+					[DSNode] = @DsNode
+				
+				SELECT @@ROWCOUNT
+				SET ANSI_NULLS ON
+			]]></body>
+		</procedure>
+		<procedure owner="dbo" name="mst_links_ac_GetByUsNode" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Select records from the mst_links_ac table through a foreign key
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@UsNode" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				SET ANSI_NULLS OFF
+				
+				SELECT
+					[MAPINFO_ID],
+					[MLinkID],
+					[CompKey],
+					[USNode],
+					[DSNode],
+					[PipeShape],
+					[LinkType],
+					[PipeFlowType],
+					[Length],
+					[DiamWidth],
+					[Height],
+					[Material],
+					[upsdpth],
+					[dwndpth],
+					[USIE],
+					[DSIE],
+					[AsBuilt],
+					[Instdate],
+					[FromX],
+					[FromY],
+					[ToX],
+					[ToY],
+					[Roughness],
+					[TimeFrame],
+					[DataFlagSynth],
+					[DataQual],
+					[Hservstat],
+					[ValidFromDate],
+					[ValidToDate],
+					[CADKey],
+					[AuditNodeID],
+					[AuditDups],
+					[AuditSpatial],
+					[AuditOK2Go],
+					[AuditProcTimestamp],
+					[Qdes],
+					[DME_GlobalID]
+				FROM
+					[dbo].[mst_links_ac]
+				WHERE
+					[USNode] = @UsNode
+				
+				SELECT @@ROWCOUNT
+				SET ANSI_NULLS ON
+			]]></body>
+		</procedure>
+		<procedure owner="dbo" name="mst_links_ac_GetByMapinfoId" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Select records from the mst_links_ac table through an index
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@MapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>
+			</parameters>
+			<body><![CDATA[
+				SELECT
+					[MAPINFO_ID],
+					[MLinkID],
+					[CompKey],
+					[USNode],
+					[DSNode],
+					[PipeShape],
+					[LinkType],
+					[PipeFlowType],
+					[Length],
+					[DiamWidth],
+					[Height],
+					[Material],
+					[upsdpth],
+					[dwndpth],
+					[USIE],
+					[DSIE],
+					[AsBuilt],
+					[Instdate],
+					[FromX],
+					[FromY],
+					[ToX],
+					[ToY],
+					[Roughness],
+					[TimeFrame],
+					[DataFlagSynth],
+					[DataQual],
+					[Hservstat],
+					[ValidFromDate],
+					[ValidToDate],
+					[CADKey],
+					[AuditNodeID],
+					[AuditDups],
+					[AuditSpatial],
+					[AuditOK2Go],
+					[AuditProcTimestamp],
+					[Qdes],
+					[DME_GlobalID]
+				FROM
+					[dbo].[mst_links_ac]
+				WHERE
+					[MAPINFO_ID] = @MapinfoId
+				SELECT @@ROWCOUNT
+					
+			]]></body>
+			
+		</procedure>
+		<procedure owner="dbo" name="mst_links_ac_Find" >
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Finds records in the mst_links_ac table passing nullable parameters
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters>
+				<parameter name="@SearchUsingOR" type="bit" direction="Input" size="0" precision="1" scale="0" param="" nulldefault="null"/>
+				<parameter name="@MapinfoId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault="null"/>
+				<parameter name="@MlinkId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault="null"/>
+				<parameter name="@CompKey" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault="null"/>
+				<parameter name="@UsNode" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault="null"/>
+				<parameter name="@DsNode" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault="null"/>
+				<parameter name="@PipeShape" type="nvarchar" direction="Input" size="4" precision="0" scale="0" param="(4)" nulldefault="null"/>
+				<parameter name="@LinkType" type="nvarchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault="null"/>
+				<parameter name="@PipeFlowType" type="nvarchar" direction="Input" size="1" precision="0" scale="0" param="(1)" nulldefault="null"/>
+				<parameter name="@Length" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@DiamWidth" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Height" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Material" type="nvarchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault="null"/>
+				<parameter name="@Upsdpth" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Dwndpth" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Usie" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Dsie" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@AsBuilt" type="nvarchar" direction="Input" size="14" precision="0" scale="0" param="(14)" nulldefault="null"/>
+				<parameter name="@Instdate" type="datetime" direction="Input" size="8" precision="23" scale="3" param="" nulldefault="null"/>
+				<parameter name="@Fromx" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Fromy" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Tox" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Toy" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@Roughness" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@TimeFrame" type="nvarchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault="null"/>
+				<parameter name="@DataFlagSynth" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault="null"/>
+				<parameter name="@DataQual" type="nvarchar" direction="Input" size="15" precision="0" scale="0" param="(15)" nulldefault="null"/>
+				<parameter name="@Hservstat" type="nvarchar" direction="Input" size="4" precision="0" scale="0" param="(4)" nulldefault="null"/>
+				<parameter name="@ValidFromDate" type="nvarchar" direction="Input" size="8" precision="0" scale="0" param="(8)" nulldefault="null"/>
+				<parameter name="@ValidToDate" type="nvarchar" direction="Input" size="8" precision="0" scale="0" param="(8)" nulldefault="null"/>
+				<parameter name="@CadKey" type="nvarchar" direction="Input" size="14" precision="0" scale="0" param="(14)" nulldefault="null"/>
+				<parameter name="@AuditNodeId" type="nvarchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault="null"/>
+				<parameter name="@AuditDups" type="nvarchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault="null"/>
+				<parameter name="@AuditSpatial" type="nvarchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault="null"/>
+				<parameter name="@AuditOk2Go" type="bit" direction="Input" size="1" precision="1" scale="0" param="" nulldefault="null"/>
+				<parameter name="@AuditProcTimestamp" type="nvarchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault="null"/>
+				<parameter name="@Qdes" type="float" direction="Input" size="8" precision="53" scale="0" param="" nulldefault="null"/>
+				<parameter name="@DmeGlobalId" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault="null"/>
+			</parameters>
+			<body><![CDATA[
+				
+  IF ISNULL(@SearchUsingOR, 0) <> 1
+  BEGIN
+    SELECT
+	  [MAPINFO_ID]
+	, [MLinkID]
+	, [CompKey]
+	, [USNode]
+	, [DSNode]
+	, [PipeShape]
+	, [LinkType]
+	, [PipeFlowType]
+	, [Length]
+	, [DiamWidth]
+	, [Height]
+	, [Material]
+	, [upsdpth]
+	, [dwndpth]
+	, [USIE]
+	, [DSIE]
+	, [AsBuilt]
+	, [Instdate]
+	, [FromX]
+	, [FromY]
+	, [ToX]
+	, [ToY]
+	, [Roughness]
+	, [TimeFrame]
+	, [DataFlagSynth]
+	, [DataQual]
+	, [Hservstat]
+	, [ValidFromDate]
+	, [ValidToDate]
+	, [CADKey]
+	, [AuditNodeID]
+	, [AuditDups]
+	, [AuditSpatial]
+	, [AuditOK2Go]
+	, [AuditProcTimestamp]
+	, [Qdes]
+	, [DME_GlobalID]
+    FROM
+	[dbo].[mst_links_ac]
+    WHERE 
+	 ([MAPINFO_ID] = @MapinfoId OR @MapinfoId IS NULL)
+	AND ([MLinkID] = @MlinkId OR @MlinkId IS NULL)
+	AND ([CompKey] = @CompKey OR @CompKey IS NULL)
+	AND ([USNode] = @UsNode OR @UsNode IS NULL)
+	AND ([DSNode] = @DsNode OR @DsNode IS NULL)
+	AND ([PipeShape] = @PipeShape OR @PipeShape IS NULL)
+	AND ([LinkType] = @LinkType OR @LinkType IS NULL)
+	AND ([PipeFlowType] = @PipeFlowType OR @PipeFlowType IS NULL)
+	AND ([Length] = @Length OR @Length IS NULL)
+	AND ([DiamWidth] = @DiamWidth OR @DiamWidth IS NULL)
+	AND ([Height] = @Height OR @Height IS NULL)
+	AND ([Material] = @Material OR @Material IS NULL)
+	AND ([upsdpth] = @Upsdpth OR @Upsdpth IS NULL)
+	AND ([dwndpth] = @Dwndpth OR @Dwndpth IS NULL)
+	AND ([USIE] = @Usie OR @Usie IS NULL)
+	AND ([DSIE] = @Dsie OR @Dsie IS NULL)
+	AND ([AsBuilt] = @AsBuilt OR @AsBuilt IS NULL)
+	AND ([Instdate] = @Instdate OR @Instdate IS NULL)
+	AND ([FromX] = @Fromx OR @Fromx IS NULL)
+	AND ([FromY] = @Fromy OR @Fromy IS NULL)
+	AND ([ToX] = @Tox OR @Tox IS NULL)
+	AND ([ToY] = @Toy OR @Toy IS NULL)
+	AND ([Roughness] = @Roughness OR @Roughness IS NULL)
+	AND ([TimeFrame] = @TimeFrame OR @TimeFrame IS NULL)
+	AND ([DataFlagSynth] = @DataFlagSynth OR @DataFlagSynth IS NULL)
+	AND ([DataQual] = @DataQual OR @DataQual IS NULL)
+	AND ([Hservstat] = @Hservstat OR @Hservstat IS NULL)
+	AND ([ValidFromDate] = @ValidFromDate OR @ValidFromDate IS NULL)
+	AND ([ValidToDate] = @ValidToDate OR @ValidToDate IS NULL)
+	AND ([CADKey] = @CadKey OR @CadKey IS NULL)
+	AND ([AuditNodeID] = @AuditNodeId OR @AuditNodeId IS NULL)
+	AND ([AuditDups] = @AuditDups OR @AuditDups IS NULL)
+	AND ([AuditSpatial] = @AuditSpatial OR @AuditSpatial IS NULL)
+	AND ([AuditOK2Go] = @AuditOk2Go OR @AuditOk2Go IS NULL)
+	AND ([AuditProcTimestamp] = @AuditProcTimestamp OR @AuditProcTimestamp IS NULL)
+	AND ([Qdes] = @Qdes OR @Qdes IS NULL)
+	AND ([DME_GlobalID] = @DmeGlobalId OR @DmeGlobalId IS NULL)
+						
+  END
+  ELSE
+  BEGIN
+    SELECT
+	  [MAPINFO_ID]
+	, [MLinkID]
+	, [CompKey]
+	, [USNode]
+	, [DSNode]
+	, [PipeShape]
+	, [LinkType]
+	, [PipeFlowType]
+	, [Length]
+	, [DiamWidth]
+	, [Height]
+	, [Material]
+	, [upsdpth]
+	, [dwndpth]
+	, [USIE]
+	, [DSIE]
+	, [AsBuilt]
+	, [Instdate]
+	, [FromX]
+	, [FromY]
+	, [ToX]
+	, [ToY]
+	, [Roughness]
+	, [TimeFrame]
+	, [DataFlagSynth]
+	, [DataQual]
+	, [Hservstat]
+	, [ValidFromDate]
+	, [ValidToDate]
+	, [CADKey]
+	, [AuditNodeID]
+	, [AuditDups]
+	, [AuditSpatial]
+	, [AuditOK2Go]
+	, [AuditProcTimestamp]
+	, [Qdes]
+	, [DME_GlobalID]
+    FROM
+	[dbo].[mst_links_ac]
+    WHERE 
+	 ([MAPINFO_ID] = @MapinfoId AND @MapinfoId is not null)
+	OR ([MLinkID] = @MlinkId AND @MlinkId is not null)
+	OR ([CompKey] = @CompKey AND @CompKey is not null)
+	OR ([USNode] = @UsNode AND @UsNode is not null)
+	OR ([DSNode] = @DsNode AND @DsNode is not null)
+	OR ([PipeShape] = @PipeShape AND @PipeShape is not null)
+	OR ([LinkType] = @LinkType AND @LinkType is not null)
+	OR ([PipeFlowType] = @PipeFlowType AND @PipeFlowType is not null)
+	OR ([Length] = @Length AND @Length is not null)
+	OR ([DiamWidth] = @DiamWidth AND @DiamWidth is not null)
+	OR ([Height] = @Height AND @Height is not null)
+	OR ([Material] = @Material AND @Material is not null)
+	OR ([upsdpth] = @Upsdpth AND @Upsdpth is not null)
+	OR ([dwndpth] = @Dwndpth AND @Dwndpth is not null)
+	OR ([USIE] = @Usie AND @Usie is not null)
+	OR ([DSIE] = @Dsie AND @Dsie is not null)
+	OR ([AsBuilt] = @AsBuilt AND @AsBuilt is not null)
+	OR ([Instdate] = @Instdate AND @Instdate is not null)
+	OR ([FromX] = @Fromx AND @Fromx is not null)
+	OR ([FromY] = @Fromy AND @Fromy is not null)
+	OR ([ToX] = @Tox AND @Tox is not null)
+	OR ([ToY] = @Toy AND @Toy is not null)
+	OR ([Roughness] = @Roughness AND @Roughness is not null)
+	OR ([TimeFrame] = @TimeFrame AND @TimeFrame is not null)
+	OR ([DataFlagSynth] = @DataFlagSynth AND @DataFlagSynth is not null)
+	OR ([DataQual] = @DataQual AND @DataQual is not null)
+	OR ([Hservstat] = @Hservstat AND @Hservstat is not null)
+	OR ([ValidFromDate] = @ValidFromDate AND @ValidFromDate is not null)
+	OR ([ValidToDate] = @ValidToDate AND @ValidToDate is not null)
+	OR ([CADKey] = @CadKey AND @CadKey is not null)
+	OR ([AuditNodeID] = @AuditNodeId AND @AuditNodeId is not null)
+	OR ([AuditDups] = @AuditDups AND @AuditDups is not null)
+	OR ([AuditSpatial] = @AuditSpatial AND @AuditSpatial is not null)
+	OR ([AuditOK2Go] = @AuditOk2Go AND @AuditOk2Go is not null)
+	OR ([AuditProcTimestamp] = @AuditProcTimestamp AND @AuditProcTimestamp is not null)
+	OR ([Qdes] = @Qdes AND @Qdes is not null)
+	OR ([DME_GlobalID] = @DmeGlobalId AND @DmeGlobalId is not null)
+	SELECT @@ROWCOUNT			
+  END
+				]]></body>
+		</procedure>
+
+		
+		<procedure owner="dbo" name="mst_links_ac_Find_Dynamic"  skip="true">
+			<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Gets records from the mst_links_ac table using a dynamically generated query.
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+			<parameters/>
+			<body><![CDATA[
+				
+				BEGIN
+				
+				-- Create a temp table to store the select results
+				CREATE TABLE #PageIndex
+				(
+				    [IndexId] int IDENTITY (1, 1) NOT NULL,
+				    [MAPINFO_ID] int 
+				)
+				
+				-- Insert into the temp table
+				INSERT INTO #PageIndex ( [MAPINFO_ID] )
+				SELECT TOP {3} [MAPINFO_ID]
+				FROM [dbo].[mst_links_ac] {0}
+				ORDER BY {1}
+				
+				-- Return paged results
+				SELECT O.[MAPINFO_ID], O.[MLinkID], O.[CompKey], O.[USNode], O.[DSNode], O.[PipeShape], O.[LinkType], O.[PipeFlowType], O.[Length], O.[DiamWidth], O.[Height], O.[Material], O.[upsdpth], O.[dwndpth], O.[USIE], O.[DSIE], O.[AsBuilt], O.[Instdate], O.[FromX], O.[FromY], O.[ToX], O.[ToY], O.[Roughness], O.[TimeFrame], O.[DataFlagSynth], O.[DataQual], O.[Hservstat], O.[ValidFromDate], O.[ValidToDate], O.[CADKey], O.[AuditNodeID], O.[AuditDups], O.[AuditSpatial], O.[AuditOK2Go], O.[AuditProcTimestamp], O.[Qdes], O.[DME_GlobalID]
+				FROM
+				    [dbo].[mst_links_ac] O,
+				    #PageIndex PageIndex
+				WHERE
+				    PageIndex.IndexId > {2}
+				    AND O.[MAPINFO_ID] = PageIndex.[MAPINFO_ID]
+				ORDER BY
+				    PageIndex.IndexId
+				
+
+				-- get total count
+				SELECT COUNT(*) AS TotalRowCount FROM [dbo].[mst_links_ac] {0};
+				
+				DROP TABLE #PageIndex
+				END
+			]]></body>
+		</procedure>
+		
+</procedures>
+</root>

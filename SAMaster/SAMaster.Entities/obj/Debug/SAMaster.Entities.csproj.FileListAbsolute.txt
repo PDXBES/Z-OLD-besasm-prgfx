@@ -1,0 +1,11 @@
+C:\NetTiers\SAMaster\SAMaster.Entities\bin\Debug\SAMaster.Entities.dll
+C:\NetTiers\SAMaster\SAMaster.Entities\bin\Debug\SAMaster.Entities.pdb
+C:\NetTiers\SAMaster\SAMaster.Entities\bin\Debug\SAMaster.Entities.xml
+C:\NetTiers\SAMaster\SAMaster.Entities\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.dll
+C:\NetTiers\SAMaster\SAMaster.Entities\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\NetTiers\SAMaster\SAMaster.Entities\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\NetTiers\SAMaster\SAMaster.Entities\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\NetTiers\SAMaster\SAMaster.Entities\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll
+C:\NetTiers\SAMaster\SAMaster.Entities\obj\Debug\ResolveAssemblyReference.cache
+C:\NetTiers\SAMaster\SAMaster.Entities\obj\Debug\SAMaster.Entities.dll
+C:\NetTiers\SAMaster\SAMaster.Entities\obj\Debug\SAMaster.Entities.pdb

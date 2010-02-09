@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SAMaster.Entities.EntityBase" Collapsed="true">
+    <Position X="1.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.EntityBaseCore" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAACJAAQCiASAAKkhAOEAI1CAAAoAAAGADAwAAgAA=</HashCode>
+      <FileName>EntityBaseCore.generated.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAMaster.Entities.EntityCache" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAwAAACEACRAAEAEAAAAAAAAAEAAGEAAAEAgA=</HashCode>
+      <FileName>EntityCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.EntityFactory" Collapsed="true">
+    <Position X="5.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAMaster.Entities.EntityFactoryBase" Collapsed="true">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJIAAAAEAAAAACAQAAFggAQAADAgAUAAAIAQgAAAAEA=</HashCode>
+      <FileName>EntityFactoryBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAMaster.Entities.Expressions" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAQAAAAABAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.Expression" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAEAAAAAAAgAAAAAAAAAAAAAABCIAA=</HashCode>
+      <FileName>EntityFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.EntityFilter&lt;T, Entity&gt;" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>EntityFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.EntityHelper" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAEAAAAAIIAAAUgAAAgAEAACAAAAIAIAgEAAEAABA=</HashCode>
+      <FileName>EntityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.EnumTextValueAttribute" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>EntityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.ColumnEnumAttribute" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAEAAAgRAIBIEgCAAAIAAAAAgABA=</HashCode>
+      <FileName>EntityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.GenericStateChangedEventArgs&lt;T&gt;" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.EntityKeyBase" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityKeyBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.EntityKeyBaseCore" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityKeyBaseCore.generated.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAMaster.Entities.EntityLocator" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAABAAAABAAAIAAAAAAAAAAAAAAAQAAI=</HashCode>
+      <FileName>EntityLocator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.EntityManager" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAACAAAABAACIAAAAEAEAAAABEBACAAAAQAEAAA=</HashCode>
+      <FileName>EntityManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.EntityNotValidException" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAFAIAIAAAAAAAAAAAAAIAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>EntityManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.EntityPropertyComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAABAAAA=</HashCode>
+      <FileName>EntityPropertyComparer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SAMaster.Entities.EntityUtil" Collapsed="true">
+    <Position X="19" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAcACAAAABiAAAAQIAEBBgAAAQAABCEAACAAAAAAIwA=</HashCode>
+      <FileName>EntityUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.GenericTypeConverter" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAA=</HashCode>
+      <FileName>GenericTypeConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.ListBase&lt;T&gt;" Collapsed="true">
+    <Position X="6.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oIAESiAAALISgEAECAERQDBAABEIAgiIAhCNFAhGUFM=</HashCode>
+      <FileName>ListBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAMaster.Entities.SortComparer&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEgAAAAQAAAAAAAAAAgAIAAAAAAABQAAAgACA=</HashCode>
+      <FileName>ListBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SAMaster.Entities.MstLinksAc" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MstLinksAc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.MstLinksAcBase" Collapsed="true">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IMEBIoNwFSKggAQGhHJwEAJhFynIAMAAJCCKIwEDxDA=</HashCode>
+      <FileName>MstLinksAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAMaster.Entities.MstLinksAcEventArgs" Collapsed="true">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAQAAAACAAAAAgAAAAAAA=</HashCode>
+      <FileName>MstLinksAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.MstLinksAcComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAIAAAAKAAAABAAAAAAAA=</HashCode>
+      <FileName>MstLinksAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SAMaster.Entities.MstLinksAcKey" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAgAAAAAAAAAQEAAAAAAAAACAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>MstLinksAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.MstNodesAc" Collapsed="true">
+    <Position X="2.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MstNodesAc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.MstNodesAcBase" Collapsed="true">
+    <Position X="2.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABICJgwSIggIQEhGFAEgARFimMAIAABGCKAwECxBA=</HashCode>
+      <FileName>MstNodesAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAMaster.Entities.MstNodesAcEventArgs" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAQAAAACAAAAAgAAAAAAA=</HashCode>
+      <FileName>MstNodesAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.MstNodesAcComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAIAAAAKAAAABAAAAAAAA=</HashCode>
+      <FileName>MstNodesAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SAMaster.Entities.MstNodesAcKey" Collapsed="true">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAgAAAAAAAAAQEAAAAAAAAACAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>MstNodesAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.TList&lt;T&gt;" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAhAQAAABAAAAAwREAAAAgBAAAAUAAgBAAEIIBg=</HashCode>
+      <FileName>TList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.VList&lt;T&gt;" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACABAAAAABAAAAAAQAAAAAgAAAAAEAAAAAAAAABA=</HashCode>
+      <FileName>Views\VList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.Properties.Settings" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAIAAAAAABAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.Validation.BrokenRule" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAABAAAAAAgAAAEAAAAAAAABAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Validation\BrokenRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.Validation.BrokenRulesList" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAABAAEIAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\BrokenRulesList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.Validation.CommonRules" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAIAAgAAAAAAQgCAAAAAAACAAIAAAAAAAQEBAAAQA=</HashCode>
+      <FileName>Validation\CommonRules.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.Validation.ValidationRuleArgs" Collapsed="true">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAABAAAAgAAAEAAAAAAAACAAAAAAAAAAQAABAAAA=</HashCode>
+      <FileName>Validation\ValidationRuleArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.Validation.ValidationRuleInfo" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABCAAAAAIAAAEAAEAAAAARAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Validation\ValidationRuleInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAMaster.Entities.Validation.ValidationRules" Collapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAACAAAAggACAAQgAEAAAEAAgAAABAgAA=</HashCode>
+      <FileName>Validation\ValidationRules.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SAMaster.Entities.IEntity" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAQAgAAAAAEhAEAAAlCAAAAAAAGABAwAAAAA=</HashCode>
+      <FileName>IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAMaster.Entities.ICloneableEx" Collapsed="true">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAMaster.Entities.IEntityCacheItem" Collapsed="true">
+    <Position X="12" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAIAAAAAAAAAAAAAAAEAAEAAAA=</HashCode>
+      <FileName>IEntityCacheItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAMaster.Entities.IEntityFactory" Collapsed="true">
+    <Position X="13.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEntityFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAMaster.Entities.IEntityId&lt;EntityKey&gt;" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEntityId.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAMaster.Entities.IEntityKey" Collapsed="true">
+    <Position X="15.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEntityKey.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAMaster.Entities.IMstLinksAc" Collapsed="true">
+    <Position X="17.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEEAAoBQBACAAAACBBJwAAJgFyBIAEAAAAAAIQEDADA=</HashCode>
+      <FileName>IMstLinksAc.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAMaster.Entities.IMstNodesAc" Collapsed="true">
+    <Position X="19" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAwAAAAIAAAAFAAgAQBCAAAAAAAEAAAAEABBA=</HashCode>
+      <FileName>IMstNodesAc.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SAMaster.Entities.TrackingPolicy" Collapsed="true">
+    <Position X="15.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>EntityManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SAMaster.Entities.EntityState" Collapsed="true">
+    <Position X="10.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAABAAAEEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SAMaster.Entities.MstLinksAcColumn" Collapsed="true">
+    <Position X="12" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEEAAoBQBACAAAACBBIwAAJgFyBIAEAAAAAAIQEDADA=</HashCode>
+      <FileName>MstLinksAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SAMaster.Entities.MstNodesAcColumn" Collapsed="true">
+    <Position X="13.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAwAAAAIAAAAEAAAAQBCAAAAAAAAAAAAEABAA=</HashCode>
+      <FileName>MstNodesAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="SAMaster.Entities.MstLinksAcEventHandler" Collapsed="true">
+    <Position X="10.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MstLinksAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="SAMaster.Entities.MstNodesAcEventHandler" Collapsed="true">
+    <Position X="12" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>MstNodesAcBase.generated.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="SAMaster.Entities.Validation.ValidationRuleHandler" Collapsed="true">
+    <Position X="13.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\ValidationRuleHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Arial" Size="8.25" />
+</ClassDiagram>
