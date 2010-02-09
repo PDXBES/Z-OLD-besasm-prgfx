@@ -1,0 +1,133 @@
+<NetTiersReport DALNameSpace="SAMaster.Data" SolutionLink="file:\\\c:\NetTiers\SAMaster\SAMaster.sln" ConnectionString="Data Source=WS09858\SQLEXPRESS;Initial Catalog=SAMaster;Integrated Security=True" FactoryType="SAMaster.Entities.EntityFactory">
+  <initialization startTime="129091103286738143" executionTime="00:00:04.9532201">
+    <Message level="0" startTime="129091103286738143" message="Validating parameters." />
+    <Message level="2" startTime="129091103292206998" message="Generating .netTiers Entity Mapping" />
+    <Message level="0" startTime="129091103297050841" message="Loading templates." executionTime="00:00:02.3281697" />
+    <Message level="0" startTime="129091103320332538" message="Creating folders and copying dependencies." />
+  </initialization>
+  <customStoredProcedures includeCustoms="true" />
+  <common startTime="129091103336270344" executionTime="00:00:04.4688358">
+    <File name="ListBase.cs" startTime="129091103336270344" />
+    <File name="TList.cs" startTime="129091103337207862" />
+    <File name="VList.cs" startTime="129091103337520368" />
+    <File name="TestUtility.cs" startTime="129091103337676621" />
+    <File name="IEntity.cs" startTime="129091103337989127" />
+    <File name="IEntityId.cs" startTime="129091103339395404" />
+    <File name="IEntityKey.cs" startTime="129091103339707910" />
+    <File name="EntityFactory.cs" startTime="129091103339707910" />
+    <File name="EntityFactoryBase.cs" startTime="129091103339864163" />
+    <File name="IEntityFactory.cs" startTime="129091103340020416" />
+    <File name="IEntityCacheItem.cs" startTime="129091103340020416" />
+    <File name="EntityCache.cs" startTime="129091103340176669" />
+    <File name="EntityLocator.cs" startTime="129091103340332922" />
+    <File name="EntityManager.cs" startTime="129091103340489175" />
+    <File name="BrokenRule.cs" startTime="129091103340645428" />
+    <File name="BrokenRulesList.cs" startTime="129091103340957934" />
+    <File name="CommonRules.cs" startTime="129091103341114187" />
+    <File name="ValidationRuleArgs.cs" startTime="129091103341582946" />
+    <File name="ValidationRuleHandler.cs" startTime="129091103341739199" />
+    <File name="ValidationRuleInfo.cs" startTime="129091103341895452" />
+    <File name="ValidationRules.cs" startTime="129091103342207958" />
+    <File name="EntityBaseCore.generated.cs" startTime="129091103342364211" />
+    <File name="EntityBase.cs" startTime="129091103342676717" />
+    <File name="EntityKeyBaseCore.generated.cs" startTime="129091103342676717" />
+    <File name="EntityKeyBase.cs" startTime="129091103342832970" />
+    <File name="EntityFilter.cs" startTime="129091103342832970" />
+    <File name="EntityPropertyComparer.cs" startTime="129091103343301729" />
+    <File name="GenericTypeConverter.cs" startTime="129091103343457982" />
+    <File name="Procedures.xml" startTime="129091103343457982" />
+    <File name="Utility.cs" startTime="129091103357364499" />
+    <File name="ITransactionManager.cs" startTime="129091103357833258" />
+    <File name="TransactionManager.cs" startTime="129091103357833258" />
+    <File name="DataRepository.cs" startTime="129091103358145764" />
+    <File name="IEntityProvider.cs" startTime="129091103358770776" />
+    <File name="IEntityViewProvider.cs" startTime="129091103359239535" />
+    <File name="EntityProviderBase.cs" startTime="129091103359239535" />
+    <File name="EntityProviderBaseCore.generated.cs" startTime="129091103359395788" />
+    <File name="EntityViewProviderBase.cs" startTime="129091103360489559" />
+    <File name="EntityViewProviderBaseCore.generated.cs" startTime="129091103360489559" />
+    <File name="INetTiersProvider.cs" startTime="129091103360958318" />
+    <File name="NetTiersProvider.cs" startTime="129091103361114571" />
+    <File name="NetTiersProviderBase.cs" startTime="129091103361270824" />
+    <File name="NetTiersProviderCollection.cs" startTime="129091103361895836" />
+    <File name="NetTiersServiceSection.cs" startTime="129091103362052089" />
+    <File name="ExpressionParserBase.cs" startTime="129091103362052089" />
+    <File name="SqlExpressionParser.cs" startTime="129091103362208342" />
+    <File name="SqlStringBuilder.cs" startTime="129091103362520848" />
+    <File name="SqlUtil.cs" startTime="129091103363770872" />
+    <File name="StringTokenizer.cs" startTime="129091103364083378" />
+    <File name="SqlClient\SqlNetTiersProvider.cs" startTime="129091103364395884" />
+    <File name="StoredProcedureProvider.cs" startTime="129091103364864643" />
+    <File name="BaseDataSource.cs" startTime="129091103365020896" />
+    <File name="BaseDataSourceDesigner.cs" startTime="129091103365802161" />
+    <File name="CustomDataSource.cs" startTime="129091103365958414" />
+    <File name="CustomDataSourceDesigner.cs" startTime="129091103366270920" />
+    <File name="CustomParameter.cs" startTime="129091103366270920" />
+    <File name="DataParameter.cs" startTime="129091103366427173" />
+    <File name="EntityDataSource.cs" startTime="129091103366583426" />
+    <File name="EntityDataSourceFilter.cs" startTime="129091103367052185" />
+    <File name="EntityRelationship.cs" startTime="129091103367364691" />
+    <File name="EntityRelationshipMember.cs" startTime="129091103367520944" />
+    <File name="EntityTransactionModule.cs" startTime="129091103367833450" />
+    <File name="ILinkedDataSource.cs" startTime="129091103367989703" />
+    <File name="ManyToManyListRelationship.cs" startTime="129091103368145956" />
+    <File name="ManyToManyViewRelationship.cs" startTime="129091103368302209" />
+    <File name="OneToManyGridRelationship.cs" startTime="129091103368302209" />
+    <File name="OneToOneViewRelationship.cs" startTime="129091103368458462" />
+    <File name="ProviderDataSource.cs" startTime="129091103368614715" />
+    <File name="ProviderDataSourceDesigner.cs" startTime="129091103368927221" />
+    <File name="ReadOnlyDataSource.cs" startTime="129091103369395980" />
+    <File name="ReadOnlyDataSourceDesigner.cs" startTime="129091103369708486" />
+    <File name="SqlParameter.cs" startTime="129091103369864739" />
+    <File name="MstNodesAcDataSource.cs" startTime="129091103370177245" />
+    <File name="MstLinksAcDataSource.cs" startTime="129091103370646004" />
+    <File name="FormUtil.cs" startTime="129091103370802257" />
+    <File name="FormUtilBase.generated.cs" startTime="129091103370802257" />
+    <File name="MultiBindableTemplate.cs" startTime="129091103371896028" />
+    <File name="MultiFormView.cs" startTime="129091103372052281" />
+    <File name="EntityGridView.cs" startTime="129091103372208534" />
+    <File name="EntityDropDownList.cs" startTime="129091103372677293" />
+    <File name="BoundEntityDropDownField.cs" startTime="129091103372989799" />
+    <File name="BoundRadioButtonField.cs" startTime="129091103373146052" />
+    <File name="GridViewSearchPanel.cs" startTime="129091103373302305" />
+    <File name="GridViewSearchPanelState.cs" startTime="129091103373927317" />
+    <File name="EntityLabel.cs" startTime="129091103373927317" />
+    <File name="HyperlinkField.cs" startTime="129091103374083570" />
+    <File name="MstNodesAcRepeater.cs" startTime="129091103374239823" />
+    <File name="MstLinksAcRepeater.cs" startTime="129091103374552329" />
+    <File name="Web.config" startTime="129091103374552329" />
+    <File name="Enterprise Library v4_1 website configuration files" startTime="129091103374864835" />
+    <File name="Default.aspx" startTime="129091103375021088" />
+    <File name="Default.aspx.cs" startTime="129091103375177341" />
+    <File name="SAMaster.sln" startTime="129091103377364883" />
+    <File name="SAMaster.Entities.csproj" startTime="129091103377833642" />
+    <File name="SAMaster.Data.Data.csproj" startTime="129091103379239919" />
+    <File name="SAMaster.Entities.Data.SqlClient.csproj" startTime="129091103379396172" />
+    <File name="SAMaster.Web.csproj" startTime="129091103379552425" />
+    <File name="SAMaster.build" startTime="129091103379552425" />
+    <File name="EntityHelper.cs" startTime="129091103379864931" />
+    <File name="EntityUtil.cs" startTime="129091103380177437" />
+  </common>
+  <Table name="mst_links_ac" startTime="129091103380958702" executionTime="00:00:00.4375084">
+    <File name="MstLinksAc.generated.cs" startTime="129091103380958702" executionTime="00:00:00.1562530" />
+    <File name="IMstLinksAc.cs" startTime="129091103382521232" executionTime="00:00:00.0156253" />
+    <File name="MstLinksAc.cs" startTime="129091103382677485" executionTime="00:00:00" />
+    <File name="MstLinksAcProviderBase.generatedCore.cs" startTime="129091103382677485" executionTime="00:00:00.1406277" />
+    <File name="MstLinksAcProviderBase.generated.cs" startTime="129091103384083762" executionTime="00:00:00.0156253" />
+    <File name="SqlClient\SqlMstLinksAcProviderBase.generated.cs" startTime="129091103384240015" executionTime="00:00:00.0937518" />
+    <File name="SqlClient\MstLinksAcTest.cs" startTime="129091103385177533" executionTime="00:00:00.0156253" />
+  </Table>
+  <Table name="mst_nodes_ac" startTime="129091103385333786" executionTime="00:00:00.0937518">
+    <File name="MstNodesAc.generated.cs" startTime="129091103385333786" executionTime="00:00:00.0312506" />
+    <File name="IMstNodesAc.cs" startTime="129091103385646292" executionTime="00:00:00" />
+    <File name="MstNodesAc.cs" startTime="129091103385646292" executionTime="00:00:00.0156253" />
+    <File name="MstNodesAcProviderBase.generatedCore.cs" startTime="129091103385802545" executionTime="00:00:00.0156253" />
+    <File name="MstNodesAcProviderBase.generated.cs" startTime="129091103385958798" executionTime="00:00:00" />
+    <File name="SqlClient\SqlMstNodesAcProviderBase.generated.cs" startTime="129091103385958798" executionTime="00:00:00.0156253" />
+    <File name="SqlClient\MstNodesAcTest.cs" startTime="129091103386115051" executionTime="00:00:00.0156253" />
+  </Table>
+  <summary>
+    <objectCount>115</objectCount>
+    <messageCount>0</messageCount>
+  </summary>
+</NetTiersReport>
