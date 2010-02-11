@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_349CDDDC_E92B_4aa2_A9E5_C5618A1D6DAC" name="Politics and Sociology" visibility="public">
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F" name="ImperviousArea" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstF2F208_FD7D_4783_A937_E7866AEF58B7" visibility="public" association="EAID_27F2F208_FD7D_4783_A937_E7866AEF58B7" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation="none">
+					<type xmi:idref="EAID_9B27A2B3_BC00_4b81_9592_253AFD270498"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_27F2F208_FD7D_4783_A937_E7866AEF58B7" visibility="public">
+				<memberEnd xmi:idref="EAID_dstF2F208_FD7D_4783_A937_E7866AEF58B7"/>
+				<memberEnd xmi:idref="EAID_srcF2F208_FD7D_4783_A937_E7866AEF58B7"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcF2F208_FD7D_4783_A937_E7866AEF58B7" visibility="public" association="EAID_27F2F208_FD7D_4783_A937_E7866AEF58B7" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation="shared">
+					<type xmi:idref="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB" name="Taxlot" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_35239EB7_440C_4043_AA97_F36BBCCA2305" visibility="public">
+				<memberEnd xmi:idref="EAID_dst239EB7_440C_4043_AA97_F36BBCCA2305"/>
+				<memberEnd xmi:idref="EAID_src239EB7_440C_4043_AA97_F36BBCCA2305"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src239EB7_440C_4043_AA97_F36BBCCA2305" visibility="public" association="EAID_35239EB7_440C_4043_AA97_F36BBCCA2305" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation="composite">
+					<type xmi:idref="EAID_FF044E5A_1687_4c96_AD71_EAB39D562EE4"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_4EDED7BF_8A64_4b9e_8FA4_619DC4B37F9A" visibility="public">
+				<memberEnd xmi:idref="EAID_dstDED7BF_8A64_4b9e_8FA4_619DC4B37F9A"/>
+				<memberEnd xmi:idref="EAID_srcDED7BF_8A64_4b9e_8FA4_619DC4B37F9A"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcDED7BF_8A64_4b9e_8FA4_619DC4B37F9A" visibility="public" association="EAID_4EDED7BF_8A64_4b9e_8FA4_619DC4B37F9A" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation="none">
+					<type xmi:idref="EAID_3F7615F8_5383_43f2_9DDD_143BBAC76561"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstDED7BF_8A64_4b9e_8FA4_619DC4B37F9A" visibility="public" association="EAID_4EDED7BF_8A64_4b9e_8FA4_619DC4B37F9A" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation="none">
+					<type xmi:idref="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_7E83FDB6_C836_4ebe_B6EA_E6C088C6D441" visibility="public">
+				<memberEnd xmi:idref="EAID_dst83FDB6_C836_4ebe_B6EA_E6C088C6D441"/>
+				<memberEnd xmi:idref="EAID_src83FDB6_C836_4ebe_B6EA_E6C088C6D441"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src83FDB6_C836_4ebe_B6EA_E6C088C6D441" visibility="public" association="EAID_7E83FDB6_C836_4ebe_B6EA_E6C088C6D441" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation="composite">
+					<type xmi:idref="EAID_5B9F3B11_913B_4702_A31C_12FFD1623670"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_C11E3694_F2F2_49af_8786_753A56E7149D" visibility="public">
+				<memberEnd xmi:idref="EAID_dst1E3694_F2F2_49af_8786_753A56E7149D"/>
+				<memberEnd xmi:idref="EAID_src1E3694_F2F2_49af_8786_753A56E7149D"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src1E3694_F2F2_49af_8786_753A56E7149D" visibility="public" association="EAID_C11E3694_F2F2_49af_8786_753A56E7149D" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation="none">
+					<type xmi:idref="EAID_6B21CD10_5FC3_4b7b_A9B0_4B710660813C"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst1E3694_F2F2_49af_8786_753A56E7149D" visibility="public" association="EAID_C11E3694_F2F2_49af_8786_753A56E7149D" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation="none">
+					<type xmi:idref="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_6B21CD10_5FC3_4b7b_A9B0_4B710660813C" name="WaterBilling" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_3F7615F8_5383_43f2_9DDD_143BBAC76561" name="Zoning" visibility="public"/>
+		</packagedElement>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_349CDDDC_E92B_4aa2_A9E5_C5618A1D6DAC" xmi:type="uml:Package" name="Politics and Sociology" scope="public">
+				<model package2="EAID_349CDDDC_E92B_4aa2_A9E5_C5618A1D6DAC" package="EAPK_0B0CE3D6_7263_431e_8F19_0E83C13E76AD" tpos="3" ea_localid="159" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="dcautley" version="1.0" phase="1.0" created="2010-02-03 23:15:01" modified="2010-02-03 23:15:01" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="ASM Domain Model"/>
+				<packageproperties version="1.0" tpos="3"/>
+				<paths/>
+				<times created="2010-02-03 00:00:00" modified="2010-02-03 00:00:00"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
+			</element>
+			<element xmi:idref="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F" xmi:type="uml:Class" name="ImperviousArea" scope="public">
+				<model package="EAPK_349CDDDC_E92B_4aa2_A9E5_C5618A1D6DAC" tpos="0" ea_localid="527" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project version="1.0" phase="1.0" created="2007-07-03 12:28:01" modified="2010-02-03 23:19:29" complexity="1" status="Proposed"/>
+				<code gentype="C#"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={69D2C612-8DC1-44c0-BAC8-CCADD510B1B4}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={EDA578CC-E325-439e-99E3-E08E9D25248F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Politics and Sociology"/>
+				<links>
+					<Aggregation xmi:id="EAID_27F2F208_FD7D_4783_A937_E7866AEF58B7" start="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F" end="EAID_9B27A2B3_BC00_4b81_9592_253AFD270498"/>
+					<Generalization xmi:id="EAID_73C2C7AB_9619_4e4c_9ECA_F610E471E425" start="EAID_5C35CD21_663C_471a_9D2A_7EDB5AB3D610" end="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F"/>
+					<Generalization xmi:id="EAID_94306BCB_D5A3_4c65_B5A1_62F694FDC9B9" start="EAID_3DCBE6C2_7726_4ca3_A971_78C16DE522E5" end="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F"/>
+					<Generalization xmi:id="EAID_EC95A97C_0253_41fc_B8AA_F2E789D51643" start="EAID_060D9785_4285_403b_AC39_59201A3FB765" end="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB" xmi:type="uml:Class" name="Taxlot" scope="public">
+				<model package="EAPK_349CDDDC_E92B_4aa2_A9E5_C5618A1D6DAC" tpos="0" ea_localid="437" ea_eleType="element"/>
+				<properties documentation="A Taxlot is a parcel of land that is considered private property but which contributes runoff to the sewer system." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project version="1.0" phase="1.0" created="2007-07-03 12:23:23" modified="2010-02-03 23:22:59" complexity="1" status="Proposed"/>
+				<code gentype="C#"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={D9A5A4D7-455F-4413-ABAF-D3D3EE717A4D}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={0B99B3EE-0F9F-4c9e-A54D-534349A78FFB}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Politics and Sociology"/>
+				<links>
+					<Aggregation xmi:id="EAID_35239EB7_440C_4043_AA97_F36BBCCA2305" start="EAID_FF044E5A_1687_4c96_AD71_EAB39D562EE4" end="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB"/>
+					<Association xmi:id="EAID_4EDED7BF_8A64_4b9e_8FA4_619DC4B37F9A" start="EAID_3F7615F8_5383_43f2_9DDD_143BBAC76561" end="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB"/>
+					<Aggregation xmi:id="EAID_7E83FDB6_C836_4ebe_B6EA_E6C088C6D441" start="EAID_5B9F3B11_913B_4702_A31C_12FFD1623670" end="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB"/>
+					<Association xmi:id="EAID_C11E3694_F2F2_49af_8786_753A56E7149D" start="EAID_6B21CD10_5FC3_4b7b_A9B0_4B710660813C" end="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_6B21CD10_5FC3_4b7b_A9B0_4B710660813C" xmi:type="uml:Class" name="WaterBilling" scope="public">
+				<model package="EAPK_349CDDDC_E92B_4aa2_A9E5_C5618A1D6DAC" tpos="0" ea_localid="476" ea_eleType="element"/>
+				<properties documentation="A Water Billing is used to estimate the amount of sanitary sewage a Taxlot generates." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project version="1.0" phase="1.0" created="2007-07-10 09:26:25" modified="2010-02-03 23:24:18" complexity="1" status="Proposed"/>
+				<code gentype="C#"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={8DF3C7FA-F704-4474-9866-BA974AFA9DA4}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={6B21CD10-5FC3-4b7b-A9B0-4B710660813C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Politics and Sociology"/>
+				<links>
+					<Association xmi:id="EAID_C11E3694_F2F2_49af_8786_753A56E7149D" start="EAID_6B21CD10_5FC3_4b7b_A9B0_4B710660813C" end="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_3F7615F8_5383_43f2_9DDD_143BBAC76561" xmi:type="uml:Class" name="Zoning" scope="public">
+				<model package="EAPK_349CDDDC_E92B_4aa2_A9E5_C5618A1D6DAC" tpos="0" ea_localid="459" ea_eleType="element"/>
+				<properties documentation="A Zoning is the legal usage of a taxlot (e.g., single family homes, commercial building, industrial warehouses, etc.).  Zoning affects a Taxlot's default baseflow and future impervious growth." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project version="1.0" phase="1.0" created="2007-07-03 12:36:59" modified="2010-02-03 23:24:24" complexity="1" status="Proposed"/>
+				<code gentype="C#"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={32011E2C-58E3-401e-A96C-C01F3EFDACD5}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={3F7615F8-5383-43f2-9DDD-143BBAC76561}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Politics and Sociology"/>
+				<links>
+					<Association xmi:id="EAID_4EDED7BF_8A64_4b9e_8FA4_619DC4B37F9A" start="EAID_3F7615F8_5383_43f2_9DDD_143BBAC76561" end="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_27F2F208_FD7D_4783_A937_E7866AEF58B7">
+				<source xmi:idref="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F">
+					<model ea_localid="527" type="Class" name="ImperviousArea"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_9B27A2B3_BC00_4b81_9592_253AFD270498">
+					<model ea_localid="494" type="Class" name="Subcatchment"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="shared" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="274"/>
+				<properties ea_type="Aggregation" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="1" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_73C2C7AB_9619_4e4c_9ECA_F610E471E425">
+				<source xmi:idref="EAID_5C35CD21_663C_471a_9D2A_7EDB5AB3D610">
+					<model ea_localid="469" type="Class" name="Parking"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F">
+					<model ea_localid="527" type="Class" name="ImperviousArea"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="302"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="1" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_94306BCB_D5A3_4c65_B5A1_62F694FDC9B9">
+				<source xmi:idref="EAID_3DCBE6C2_7726_4ca3_A971_78C16DE522E5">
+					<model ea_localid="456" type="Class" name="Roof"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F">
+					<model ea_localid="527" type="Class" name="ImperviousArea"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="314"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="1" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_EC95A97C_0253_41fc_B8AA_F2E789D51643">
+				<source xmi:idref="EAID_060D9785_4285_403b_AC39_59201A3FB765">
+					<model ea_localid="434" type="Class" name="RightOfWay"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_EDA578CC_E325_439e_99E3_E08E9D25248F">
+					<model ea_localid="527" type="Class" name="ImperviousArea"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="344"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="1" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_35239EB7_440C_4043_AA97_F36BBCCA2305">
+				<source xmi:idref="EAID_FF044E5A_1687_4c96_AD71_EAB39D562EE4">
+					<model ea_localid="533" type="Class" name="DirectSubcatchment"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB">
+					<model ea_localid="437" type="Class" name="Taxlot"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="341"/>
+				<properties ea_type="Aggregation" subtype="Strong" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="1" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_4EDED7BF_8A64_4b9e_8FA4_619DC4B37F9A">
+				<source xmi:idref="EAID_3F7615F8_5383_43f2_9DDD_143BBAC76561">
+					<model ea_localid="459" type="Class" name="Zoning"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB">
+					<model ea_localid="437" type="Class" name="Taxlot"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs value="$XREFPROP=$XID={735CB7F6-E087-449c-A7EB-138497A793BD}$XID;$NAM=CustomProperties$NAM;$TYP=connectorDestEnd property$TYP;$VIS=Public$VIS;$DES=@PROP=@NAME=isDerivedUnion@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=default@ENDNAME;@TYPE=String@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isReadOnly@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isComposite@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=aggregation@ENDNAME;@TYPE=AggregationKind@ENDTYPE;@VALU=none@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={4EDED7BF-8A64-4b9e-8FA4-619DC4B37F9A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					<tags/>
+				</target>
+				<model ea_localid="340"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="1" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={8F47DA52-EA08-49fd-AB40-7579A1848224}$XID;$NAM=CustomProperties$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$DES=@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={4EDED7BF-8A64-4b9e-8FA4-619DC4B37F9A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_7E83FDB6_C836_4ebe_B6EA_E6C088C6D441">
+				<source xmi:idref="EAID_5B9F3B11_913B_4702_A31C_12FFD1623670">
+					<model ea_localid="468" type="Class" name="Divide"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB">
+					<model ea_localid="437" type="Class" name="Taxlot"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="339"/>
+				<properties ea_type="Aggregation" subtype="Strong" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="1" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_C11E3694_F2F2_49af_8786_753A56E7149D">
+				<source xmi:idref="EAID_6B21CD10_5FC3_4b7b_A9B0_4B710660813C">
+					<model ea_localid="476" type="Class" name="WaterBilling"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_0B99B3EE_0F9F_4c9e_A54D_534349A78FFB">
+					<model ea_localid="437" type="Class" name="Taxlot"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="338"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="1" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public"/>
+		</primitivetypes>
+		<profiles/>
+		<diagrams/>
+	</xmi:Extension>
+</xmi:XMI>
