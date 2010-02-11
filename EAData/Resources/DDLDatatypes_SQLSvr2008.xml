@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<RefData version="1.0" exporter="EA.25">
+	<DataSet name="Model Data Types - Code and DDL" table="t_datatypes" filter="Type='#Type#' and ProductName='#ProductName#' and DataType='#DataType#'" stoplist=";DatatypeID;">
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="bigint"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="bigint"/>
+			<Column name="DatatypeID" value="1025"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="bit"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="boolean"/>
+			<Column name="DatatypeID" value="1029"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="decimal"/>
+			<Column name="Size" value="2"/>
+			<Column name="MaxLen" value="38"/>
+			<Column name="MaxPrec" value="38"/>
+			<Column name="MaxScale" value="38"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="10"/>
+			<Column name="DefaultScale" value="2"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="decimal"/>
+			<Column name="DatatypeID" value="1030"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="int"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="integer"/>
+			<Column name="DatatypeID" value="1026"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="money"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="19"/>
+			<Column name="DefaultScale" value="4"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="currency"/>
+			<Column name="DatatypeID" value="1032"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="numeric"/>
+			<Column name="Size" value="2"/>
+			<Column name="MaxLen" value="38"/>
+			<Column name="MaxPrec" value="38"/>
+			<Column name="MaxScale" value="38"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="10"/>
+			<Column name="DefaultScale" value="2"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="numeric"/>
+			<Column name="DatatypeID" value="1031"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="smallint"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="smallint"/>
+			<Column name="DatatypeID" value="1027"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="smallmoney"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="money"/>
+			<Column name="DatatypeID" value="1033"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="tinyint"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="tinyint"/>
+			<Column name="DatatypeID" value="1028"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="float"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="53"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="53"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="float"/>
+			<Column name="DatatypeID" value="1034"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="real"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="53"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="53"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="double"/>
+			<Column name="DatatypeID" value="1035"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="date"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="date"/>
+			<Column name="DatatypeID" value="1036"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="datetime2"/>
+			<Column name="Size" value="1"/>
+			<Column name="MaxLen" value="7"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="7"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="datetime"/>
+			<Column name="DatatypeID" value="1036"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="datetime"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="datetime"/>
+			<Column name="DatatypeID" value="1036"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="datetimeoffset"/>
+			<Column name="Size" value="1"/>
+			<Column name="MaxLen" value="7"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="7"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="datetime"/>
+			<Column name="DatatypeID" value="1036"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="smalldatetime"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="datetime"/>
+			<Column name="DatatypeID" value="1036"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="time"/>
+			<Column name="Size" value="1"/>
+			<Column name="MaxLen" value="7"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="7"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="time"/>
+			<Column name="DatatypeID" value="1036"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="char"/>
+			<Column name="Size" value="1"/>
+			<Column name="MaxLen" value="8000"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="10"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="char"/>
+			<Column name="DatatypeID" value="1038"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="varchar"/>
+			<Column name="Size" value="1"/>
+			<Column name="MaxLen" value="8000"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="50"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="varchar"/>
+			<Column name="DatatypeID" value="1039"/>
+		</DataRow>		
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="varchar(max)"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="varchar"/>
+			<Column name="DatatypeID" value="1052"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="text"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="text"/>
+			<Column name="DatatypeID" value="1040"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="nchar"/>
+			<Column name="Size" value="1"/>
+			<Column name="MaxLen" value="4000"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="10"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="nchar"/>
+			<Column name="DatatypeID" value="1041"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="nvarchar"/>
+			<Column name="Size" value="1"/>
+			<Column name="MaxLen" value="4000"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="50"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="nvarchar"/>
+			<Column name="DatatypeID" value="1042"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="nvarchar(max)"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="varchar"/>
+			<Column name="DatatypeID" value="1100"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="ntext"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="ntext"/>
+			<Column name="DatatypeID" value="1043"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="binary"/>
+			<Column name="Size" value="1"/>
+			<Column name="MaxLen" value="8000"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="10"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="Binary"/>
+			<Column name="DatatypeID" value="1044"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="varbinary"/>
+			<Column name="Size" value="1"/>
+			<Column name="MaxLen" value="8000"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="50"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="varbinary"/>
+			<Column name="DatatypeID" value="1045"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="varbinary(max)"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="varbinary"/>
+			<Column name="DatatypeID" value="1053"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="image"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="blob"/>
+			<Column name="DatatypeID" value="1046"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="timestamp"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="timestamp"/>
+			<Column name="DatatypeID" value="1048"/>
+		</DataRow>		
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="uniqueidentifier"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="guid"/>
+			<Column name="DatatypeID" value="1049"/>
+		</DataRow>		
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="sql_variant"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="sqlvariant"/>
+			<Column name="DatatypeID" value="1047"/>
+		</DataRow>		
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="xml"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="text"/>
+			<Column name="DatatypeID" value="1050"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="hierarchyid"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="text"/>
+			<Column name="DatatypeID" value="1050"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="geometry"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="text"/>
+			<Column name="DatatypeID" value="1051"/>
+		</DataRow>
+		<DataRow>
+			<Column name="Type" value="DDL"/>
+			<Column name="ProductName" value="SQL Server 2008"/>
+			<Column name="DataType" value="geography"/>
+			<Column name="Size" value="0"/>
+			<Column name="MaxLen" value="0"/>
+			<Column name="MaxPrec" value="0"/>
+			<Column name="MaxScale" value="0"/>
+			<Column name="DefaultLen" value="0"/>
+			<Column name="DefaultPrec" value="0"/>
+			<Column name="DefaultScale" value="0"/>
+			<Column name="User" value="0"/>
+			<Column name="GenericType" value="text"/>
+			<Column name="DatatypeID" value="1052"/>
+		</DataRow>		
+	</DataSet>
+</RefData>
+
+
